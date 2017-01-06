@@ -1,10 +1,15 @@
 body.login {
 	background-color: $tenup-gray;
+	color: #fff;
 
 	*,
 	*:before,
 	*:after {
 		box-sizing: border-box;
+	}
+
+	br {
+		display: none;
 	}
 
 	.message {
@@ -15,6 +20,7 @@ body.login {
 }
 
 #login {
+
 	h1 {
 		a {
 			display: block;
@@ -32,6 +38,12 @@ body.login {
 			outline: 0;
 		}
 	}
+
+	form {
+		p {
+			margin-bottom: 10px;
+		}
+	}
 }
 
 
@@ -39,10 +51,21 @@ body.login {
 #lostpasswordform {
 	background-color: transparent;
 	box-shadow: none;
+	padding: 0;
 
 	p {
+
+		&.forgetmenot {
+
+		}
+
 		label {
 
+		}
+
+		.label-text {
+			display: block;
+			color: tint($tenup_gray, 60%);
 		}
 
 		&.submit {
@@ -50,8 +73,16 @@ body.login {
 		}
 	}
 
-	input {
+	input[type="text"],
+	input[type="password"] {
+		border: 0;
+		margin: 0;
+		border-top: solid 3px tint($tenup_gray, 60%);
 
+		&:focus {
+			border-color: rgba($tenup_bluegreen, 0.5);
+			box-shadow: inset 0 0 1px 1px rgba($tenup_bluegreen, 0.7);
+		}
 	}
 }
 

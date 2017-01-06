@@ -1,9 +1,12 @@
 body.login {
-  background-color: #303030; }
+  background-color: #303030;
+  color: #fff; }
   body.login *,
   body.login *:before,
   body.login *:after {
     box-sizing: border-box; }
+  body.login br {
+    display: none; }
   body.login .message {
     background-color: #454545;
     color: #fff;
@@ -24,10 +27,31 @@ body.login {
   text-indent: -9999px;
   outline: 0; }
 
+#login form p {
+  margin-bottom: 10px; }
+
 #loginform,
 #lostpasswordform {
   background-color: transparent;
-  box-shadow: none; }
+  box-shadow: none;
+  padding: 0; }
+  #loginform p .label-text,
+  #lostpasswordform p .label-text {
+    display: block;
+    color: #acacac; }
+  #loginform input[type="text"],
+  #loginform input[type="password"],
+  #lostpasswordform input[type="text"],
+  #lostpasswordform input[type="password"] {
+    border: 0;
+    margin: 0;
+    border-top: solid 3px #acacac; }
+    #loginform input[type="text"]:focus,
+    #loginform input[type="password"]:focus,
+    #lostpasswordform input[type="text"]:focus,
+    #lostpasswordform input[type="password"]:focus {
+      border-color: rgba(84, 205, 205, 0.5);
+      box-shadow: inset 0 0 1px 1px rgba(84, 205, 205, 0.7); }
 
 #wp-submit {
   background: #54CDCD;
