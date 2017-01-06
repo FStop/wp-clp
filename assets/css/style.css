@@ -1,2 +1,44 @@
+body.login {
+  background-color: #303030; }
+  body.login *,
+  body.login *:before,
+  body.login *:after {
+    box-sizing: border-box; }
+  body.login .message {
+    background-color: #454545;
+    color: #fff;
+    border-color: #54CDCD; }
+
+#login h1 a {
+  display: block;
+  width: 83px;
+  height: 100px;
+  background-image: url("../images/10up-logo-full.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.3em;
+  margin: 0 auto 25px;
+  padding: 0;
+  text-indent: -9999px;
+  outline: 0; }
+
+#loginform,
+#lostpasswordform {
+  background-color: transparent;
+  box-shadow: none; }
+
+#wp-submit {
+  background: #54CDCD;
+  box-shadow: none;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+  border: 0;
+  border-radius: 0;
+  text-transform: uppercase; }
+  #wp-submit:hover {
+    background: #4cb9b9; }
 
 /*# sourceMappingURL=maps/style.css.map */

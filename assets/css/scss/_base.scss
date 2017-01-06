@@ -1,0 +1,105 @@
+body.login {
+	background-color: $tenup-gray;
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: border-box;
+	}
+
+	.message {
+		background-color: tint($tenup-gray, 10%);
+		color: #fff;
+		border-color: $tenup-bluegreen;
+	}
+}
+
+#login {
+	h1 {
+		a {
+			display: block;
+			width: 83px;
+			height: 100px;
+			background-image: url('../images/10up-logo-full.svg');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			color: #fff;
+			font-size: 20px;
+			line-height: 1.3em;
+			margin: 0 auto 25px;
+			padding: 0;
+			text-indent: -9999px;
+			outline: 0;
+		}
+	}
+}
+
+
+#loginform,
+#lostpasswordform {
+	background-color: transparent;
+	box-shadow: none;
+
+	p {
+		label {
+
+		}
+
+		&.submit {
+
+		}
+	}
+
+	input {
+
+	}
+}
+
+#user_login {
+
+}
+
+#user_pass {
+
+}
+
+#wp-submit {
+	background: $tenup-bluegreen;
+    box-shadow: none;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    border: 0;
+    border-radius: 0;
+    text-transform: uppercase;
+
+    &:hover {
+    	background: shade($tenup-bluegreen, 10%);
+    }
+}
+
+#nav {
+	a {
+
+	}
+}
+
+.forgetmenot {
+	label {
+
+	}
+
+	input {
+
+	}
+}
+
+#backtoblog {
+	a {
+
+	}
+}
+
+#lostpasswordform {
+
+}
