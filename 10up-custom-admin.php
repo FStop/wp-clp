@@ -20,3 +20,14 @@ function tenupclp_load_assets() {
     wp_enqueue_script( 'custom-login', TENUPCLP_PLUGIN_URL . 'assets/js/dist/scripts.min.js' );
 }
 add_action( 'login_enqueue_scripts', 'tenupclp_load_assets' );
+
+function tenupclp_login_logo_url() {
+	return home_url();
+}
+add_filter('login_headerurl', 'tenupclp_login_logo_url');
+
+function tenupclp_login_logo_url_title() {
+    return get_bloginfo('name') . ' - ' . get_bloginfo('description');
+}
+add_filter( 'login_headertitle', 'tenupclp_login_logo_url_title' );
+
