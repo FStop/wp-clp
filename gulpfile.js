@@ -37,7 +37,7 @@ gulp.task('scripts', function() {
 		.pipe(babel())
 		.pipe(concat('scripts.min.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('./assets/dist/js'))
+		.pipe(gulp.dest('./assets/js/dist/js'))
 });
 
 gulp.task('watch', function () {
