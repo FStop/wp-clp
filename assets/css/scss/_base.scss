@@ -17,6 +17,23 @@ body.login {
 		color: #fff;
 		border-color: $tenup-bluegreen;
 	}
+
+	#nav,
+	#backtoblog {
+		padding: 0;
+
+		a {
+			color: $lighter_gray;
+
+			&:hover {
+				color: $tenup_bluegreen;
+			}
+		}
+	}
+
+	#login_error {
+		background-color: tint($tenup_gray, 10%);
+	}
 }
 
 #login {
@@ -65,7 +82,7 @@ body.login {
 
 		.label-text {
 			display: block;
-			color: tint($tenup_gray, 60%);
+			color: $lighter_gray;
 		}
 
 		&.submit {
@@ -77,7 +94,7 @@ body.login {
 	input[type="password"] {
 		border: 0;
 		margin: 0;
-		border-top: solid 3px tint($tenup_gray, 60%);
+		border-top: solid 3px $lighter_gray;
 
 		&:focus {
 			border-color: rgba($tenup_bluegreen, 0.5);
@@ -109,11 +126,6 @@ body.login {
     }
 }
 
-#nav {
-	a {
-
-	}
-}
 
 .forgetmenot {
 	label {
@@ -121,12 +133,6 @@ body.login {
 	}
 
 	input {
-
-	}
-}
-
-#backtoblog {
-	a {
 
 	}
 }

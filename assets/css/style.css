@@ -11,6 +11,17 @@ body.login {
     background-color: #454545;
     color: #fff;
     border-color: #54CDCD; }
+  body.login #nav,
+  body.login #backtoblog {
+    padding: 0; }
+    body.login #nav a,
+    body.login #backtoblog a {
+      color: #acacac; }
+      body.login #nav a:hover,
+      body.login #backtoblog a:hover {
+        color: #54CDCD; }
+  body.login #login_error {
+    background-color: #454545; }
 
 #login h1 a {
   display: block;
