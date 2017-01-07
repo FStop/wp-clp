@@ -42,25 +42,31 @@ body.login {
   margin-bottom: 10px; }
 
 #loginform,
-#lostpasswordform {
+#lostpasswordform,
+#registerform {
   background-color: transparent;
   box-shadow: none;
   padding: 0; }
   #loginform p .label-text,
-  #lostpasswordform p .label-text {
+  #lostpasswordform p .label-text,
+  #registerform p .label-text {
     display: block;
     color: #acacac; }
   #loginform input[type="text"],
   #loginform input[type="password"],
   #lostpasswordform input[type="text"],
-  #lostpasswordform input[type="password"] {
+  #lostpasswordform input[type="password"],
+  #registerform input[type="text"],
+  #registerform input[type="password"] {
     border: 0;
     margin: 0;
     border-top: solid 3px #acacac; }
     #loginform input[type="text"]:focus,
     #loginform input[type="password"]:focus,
     #lostpasswordform input[type="text"]:focus,
-    #lostpasswordform input[type="password"]:focus {
+    #lostpasswordform input[type="password"]:focus,
+    #registerform input[type="text"]:focus,
+    #registerform input[type="password"]:focus {
       border-color: rgba(84, 205, 205, 0.5);
       box-shadow: inset 0 0 1px 1px rgba(84, 205, 205, 0.7); }
 
