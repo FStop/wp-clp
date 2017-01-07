@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     10up Custom Login Page
+ * Plugin Name:     TenUp Custom Login Page
  * Plugin URI:      PLUGIN SITE HERE
  * Description:     A plugin that customizes the login page for 10up
  * Author:          Gabriel Luethje
@@ -12,38 +12,45 @@
  * @package         10up_Custom_Admin
  */
 
-/*
+/**
  * Define constants
  */
 define( 'TENUPCLP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'TENUPCLP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
-/*
+/**
+ * add_action, add_filter
+ */
+add_action( 'login_enqueue_scripts', 'tenupclp_load_assets' );
+add_filter( 'login_headerurl', 'tenupclp_login_logo_url');
+add_filter( 'login_headertitle', 'tenupclp_login_logo_url_title' );
+add_filter( 'login_form', 'tenupclp_alter_form_html' );
+add_filter( 'register_form', 'tenupclp_alter_form_html' );
+add_filter( 'lostpassword_form', 'tenupclp_alter_form_html' );
+
+/**
  * Enqueue custom styles and scripts
  */
 function tenupclp_load_assets() {
     wp_enqueue_style( 'custom-login', TENUPCLP_PLUGIN_URL . '/assets/css/style.css' );
     wp_enqueue_script( 'custom-login', TENUPCLP_PLUGIN_URL . 'assets/js/dist/scripts.min.js' );
 }
-add_action( 'login_enqueue_scripts', 'tenupclp_load_assets' );
 
-/*
+/**
  * Update login logo URL to point to site home
  */
 function tenupclp_login_logo_url() {
 	return home_url();
 }
-add_filter('login_headerurl', 'tenupclp_login_logo_url');
 
-/*
+/**
  * Update login logo link title to use site title and description
  */
 function tenupclp_login_logo_url_title() {
     return get_bloginfo('name') . ' - ' . get_bloginfo('description');
 }
-add_filter( 'login_headertitle', 'tenupclp_login_logo_url_title' );
 
-/*
+/**
  * Alter the form HTML for better styling:
  * wrap text within <label> tags in a <span> removing the <br /> tag
  */
