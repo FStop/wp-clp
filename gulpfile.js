@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+	browsersync = require('browser-sync'),
 	sass = require('gulp-sass'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
@@ -30,6 +31,24 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest('./assets/css'))
 });
 
+// browser-sync task for starting the server.
+gulp.task('browsersync', function() {
+	//watch files
+	var files = [
+	'./assets/css/style.css',
+	'./assets/js/**/*.js',
+	'./*.php',
+	'./gulpfile.js'
+	];
+
+	// initialize browsersync
+	browsersync.init(files, {
+	// browsersync with a php server
+	proxy: "tenupclp.dev",
+	notify: false
+	});
+});
+
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
 	return gulp.src('./assets/js/src/scripts.js')
@@ -45,4 +64,4 @@ gulp.task('watch', function () {
 	gulp.watch('./assets/js/src/**/*.js', ['scripts']);
 });
 
-gulp.task('default',['sass-lint', 'sass', 'scripts', 'watch']);
+gulp.task('default',['sass-lint', 'sass', 'scripts', 'browsersync', 'watch']);
