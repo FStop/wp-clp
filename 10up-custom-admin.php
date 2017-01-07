@@ -44,33 +44,15 @@ function tenupclp_login_logo_url_title() {
 add_filter( 'login_headertitle', 'tenupclp_login_logo_url_title' );
 
 /*
- * Hacks to the HTML for the login form to better support custom styling
+ * Alter the form HTML for better styling:
+ * wrap text within <label> tags in a <span> removing the <br /> tag
  */
-function tenupclp_alter_login_html() {
-	$login_page_content = ob_get_contents();
+function tenupclp_alter_form_html() {
+	$page_content = ob_get_contents();
 
 	// Wrap label text in <span> tags for better styling
-	$login_page_content = preg_replace( '/\<label for="user_login"\>(.*?)\<br \/\>/', '<label for="user_login"><span class="label-text username">$1</span>', $login_page_content );
-	$login_page_content = preg_replace( '/\<label for="user_pass"\>(.*?)\<br \/\>/', '<label for="user_pass"><span class="label-text password">$1</span>', $login_page_content );
+	$page_content = preg_replace( '/\<label for=\"(.*?)\"*\s?\>(.*?)\<br ?\/?>/', '<label for="$1"><span class="label-text">$2</span>', $page_content );
 
-	ob_get_clean();
-	echo $login_page_content;
+	ob_end_clean();
+	echo $page_content;
 }
-add_action( 'login_form', 'tenupclp_alter_login_html' );
-
-/*
- * Same hacks as above to the HTML for the lost form
- * the lost password form uses a different action, so we have to duplicate
- * the lostpassword
- */
-function tenupclp_alter_lostpass_html() {
-	$lostpass_page_content = ob_get_contents();
-
-	// Wrap label text in <span> tags for better styling
-	// This <label> has an extra space before the closing `>`, which made it fun to figure out why preg_replace wasn't working here
-	$lostpass_page_content = preg_replace( '/\<label for="user_login" \>(.*?)\<br \/\>/', '<label for="user_login"><span class="username">$1</span>', $lostpass_page_content );
-
-	ob_get_clean();
-	echo $lostpass_page_content;
-}
-add_action( 'lostpassword_form', 'tenupclp_alter_lostpass_html' );
