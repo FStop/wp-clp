@@ -59,7 +59,7 @@ function tenupclp_alter_form_html() {
 	$page_content = ob_get_contents();
 
 	// Wrap label text in <span> tags for better styling
-	$page_content = preg_replace( '/\<label for=\"(.*?)\"*\s?\>(.*?)\<br ?\/?>/', '<label for="$1"><span class="label-text">$2</span>', $page_content );
+	$page_content = preg_replace( '/\<label for=\"(.*?)\" ?\>(.*?)\<br ?\/?>/', '<label for="$1"><span class="label-text">$2</span>', $page_content );
 
 	ob_end_clean();
 	echo $page_content;
