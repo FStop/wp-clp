@@ -3,3 +3,6 @@ Thumbs.db
 wp-cli.local.yml
 node_modules/
 style.css.map
+/vendor
+/composer.json
+/composer.lock

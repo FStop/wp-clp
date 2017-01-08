@@ -34,7 +34,6 @@ add_filter( 'login_headertitle', 'tenupclp_login_logo_url_title' );
  */
 function tenupclp_load_assets() {
 	wp_enqueue_style( 'custom-login', TENUPCLP_PLUGIN_URL . '/assets/css/style.css' );
-	wp_enqueue_script( 'custom-login', TENUPCLP_PLUGIN_URL . 'assets/js/dist/scripts.min.js' );
 }
 
 /**

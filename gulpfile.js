@@ -6,11 +6,7 @@ var gulp = require('gulp'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
 	sourcemaps = require('gulp-sourcemaps'),
-	sassLint = require('gulp-sass-lint'),
-	uglify = require('gulp-uglify'),
-	concat = require('gulp-concat'),
-	eslint = require('gulp-eslint'),
-	babel = require("gulp-babel");
+	sassLint = require('gulp-sass-lint');
 
 gulp.task('sass-lint'), function() {
 	return gulp.src('./assets/scss/**/*.scss')
@@ -36,7 +32,6 @@ gulp.task('browsersync', function() {
 	//watch files
 	var files = [
 	'./assets/css/style.css',
-	'./assets/js/**/*.js',
 	'./*.php',
 	'./gulpfile.js'
 	];
@@ -49,19 +44,8 @@ gulp.task('browsersync', function() {
 	});
 });
 
-// Concatenate & Minify JS
-gulp.task('scripts', function() {
-	return gulp.src('./assets/js/src/scripts.js')
-		.pipe(eslint())
-		.pipe(babel())
-		.pipe(concat('scripts.min.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('./assets/js/dist'))
-});
-
 gulp.task('watch', function () {
 	gulp.watch(['./assets/css/scss/**/*.scss'], ['sass-lint', 'sass']);
-	gulp.watch('./assets/js/src/**/*.js', ['scripts']);
 });
 
-gulp.task('default',['sass-lint', 'sass', 'scripts', 'browsersync', 'watch']);
+gulp.task('default',['sass-lint', 'sass', 'browsersync', 'watch']);
