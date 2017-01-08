@@ -19,22 +19,22 @@ define( 'TENUPCLP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'TENUPCLP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 /**
- * add_action, add_filter
+ * Declare add_action, add_filter functions
  */
 add_action( 'login_enqueue_scripts', 'tenupclp_load_assets' );
 add_action( 'login_form', 'tenupclp_alter_form_html' );
 add_action( 'register_form', 'tenupclp_alter_form_html' );
 add_action( 'lostpassword_form', 'tenupclp_alter_form_html' );
 
-add_filter( 'login_headerurl', 'tenupclp_login_logo_url');
+add_filter( 'login_headerurl', 'tenupclp_login_logo_url' );
 add_filter( 'login_headertitle', 'tenupclp_login_logo_url_title' );
 
 /**
  * Enqueue custom styles and scripts
  */
 function tenupclp_load_assets() {
-    wp_enqueue_style( 'custom-login', TENUPCLP_PLUGIN_URL . '/assets/css/style.css' );
-    wp_enqueue_script( 'custom-login', TENUPCLP_PLUGIN_URL . 'assets/js/dist/scripts.min.js' );
+	wp_enqueue_style( 'custom-login', TENUPCLP_PLUGIN_URL . '/assets/css/style.css' );
+	wp_enqueue_script( 'custom-login', TENUPCLP_PLUGIN_URL . 'assets/js/dist/scripts.min.js' );
 }
 
 /**
@@ -48,7 +48,7 @@ function tenupclp_login_logo_url() {
  * Update login logo link title to use site title and description
  */
 function tenupclp_login_logo_url_title() {
-    return get_bloginfo('name') . ' - ' . get_bloginfo('description');
+	return get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' );
 }
 
 /**
@@ -58,7 +58,7 @@ function tenupclp_login_logo_url_title() {
 function tenupclp_alter_form_html() {
 	$page_content = ob_get_contents();
 
-	// Wrap label text in <span> tags for better styling
+	// Wrap label text in <span> tags for better styling.
 	$page_content = preg_replace( '/\<label for=\"(.*?)\" ?\>(.*?)\<br ?\/?>/', '<label for="$1"><span class="label-text">$2</span>', $page_content );
 
 	ob_end_clean();
