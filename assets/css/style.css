@@ -13,13 +13,16 @@ body.login {
     border-color: #54CDCD; }
   body.login #nav,
   body.login #backtoblog {
-    padding: 0; }
-    body.login #nav a,
-    body.login #backtoblog a {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    color: transparent; }
+    body.login #nav *,
+    body.login #backtoblog * {
       color: #acacac; }
-      body.login #nav a:hover,
-      body.login #backtoblog a:hover {
-        color: #54CDCD; }
+    body.login #nav a:hover,
+    body.login #backtoblog a:hover {
+      color: #54CDCD; }
   body.login #login_error {
     background-color: #454545; }
 
