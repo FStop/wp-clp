@@ -22,11 +22,12 @@ define( 'TENUPCLP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
  * add_action, add_filter
  */
 add_action( 'login_enqueue_scripts', 'tenupclp_load_assets' );
+add_action( 'login_form', 'tenupclp_alter_form_html' );
+add_action( 'register_form', 'tenupclp_alter_form_html' );
+add_action( 'lostpassword_form', 'tenupclp_alter_form_html' );
+
 add_filter( 'login_headerurl', 'tenupclp_login_logo_url');
 add_filter( 'login_headertitle', 'tenupclp_login_logo_url_title' );
-add_filter( 'login_form', 'tenupclp_alter_form_html' );
-add_filter( 'register_form', 'tenupclp_alter_form_html' );
-add_filter( 'lostpassword_form', 'tenupclp_alter_form_html' );
 
 /**
  * Enqueue custom styles and scripts
