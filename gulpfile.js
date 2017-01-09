@@ -1,9 +1,12 @@
 'use strict';
 
 var gulp = require('gulp'),
+	argv = require('yargs').argv,
+	gulpif = require('gulp-if'),
 	browsersync = require('browser-sync'),
 	sass = require('gulp-sass'),
 	postcss = require('gulp-postcss'),
+	cssnano = require('gulp-cssnano'),
 	autoprefixer = require('autoprefixer'),
 	sourcemaps = require('gulp-sourcemaps'),
 	sassLint = require('gulp-sass-lint');
@@ -20,10 +23,11 @@ gulp.task('sass', function () {
 		autoprefixer({browsers: ['>30%']})
 	]
 	return gulp.src('./assets/css/scss/**/*.scss')
-		.pipe(sourcemaps.init())
+		.pipe(gulpif(!argv.production, sourcemaps.init() ) )
 		.pipe(sass({}).on('error', sass.logError))
 		.pipe(postcss(processors))
-		.pipe(sourcemaps.write('./maps'))
+		.pipe(gulpif(argv.production, cssnano() ) )
+		.pipe(gulpif(!argv.production, sourcemaps.write('./maps') ) )
 		.pipe(gulp.dest('./assets/css'))
 });
 
