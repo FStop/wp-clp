@@ -1,16 +1,13 @@
-# 10up Custom Login Page #
-**Contributors:** fstop  
-**Tags:** wordpress, admin  
-**Requires at least:** 3.7  
-**Tested up to:** 4.7  
-**Stable tag:** 0.1.0  
-**License:** GPLv2 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
+# WordPress Custom Login Page #
+**Contributors:** fstop
+**Tags:** wordpress, admin
+**Requires at least:** 3.7
+**Tested up to:** 4.7
+**Stable tag:** 0.1.0
+**License:** GPLv2 or later
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin customizes the 10up.com WordPress login page.
-
-## Description ##
-
+This plugin customizes the WordPress login page.
 
 ## Installation ##
 
