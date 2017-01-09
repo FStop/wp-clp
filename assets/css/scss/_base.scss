@@ -12,16 +12,29 @@ body.login {
 		display: none;
 	}
 
-	.message {
-		background-color: tint($tenup-gray, 10%);
+	.message,
+	#login_error {
+		order: 2;
+		width: 100%;
+		background-color: $light-gray;
 		color: #fff;
+	}
+
+	.message {
 		border-color: $tenup-bluegreen;
+
+		+ #login_error,
+		+ .message {
+			margin-top: 3px;
+		}
 	}
 
 	#nav,
 	#backtoblog {
 		display: flex;
 		justify-content: space-between;
+		margin-top: 24px;
+		margin-bottom: 0;
 		padding: 0;
 		// hack to make the `|` character invisible
 		color: rgba(0,0,0,0);
@@ -31,20 +44,40 @@ body.login {
 		}
 
 		a {
+			margin-right: 10px;
+
 			&:hover {
 				color: $tenup_bluegreen;
 			}
 		}
 	}
 
-	#login_error {
-		background-color: tint($tenup_gray, 10%);
+	#nav {
+		order: 5;
+
+		a {
+			margin-right: 7px;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	#backtoblog {
+		order: 4;
 	}
 }
 
 #login {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 
 	h1 {
+		flex: 0 1 100%;
+		order: 1;
+
 		a {
 			display: block;
 			width: 83px;
@@ -63,6 +96,11 @@ body.login {
 	}
 
 	form {
+		flex: 0 1 100%;
+		order: 3;
+		padding-bottom: 30px;
+		border-bottom: solid 1px $light-gray;
+
 		p {
 			margin-bottom: 10px;
 		}

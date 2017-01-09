@@ -7,42 +7,71 @@ body.login {
     box-sizing: border-box; }
   body.login br {
     display: none; }
-  body.login .message {
+  body.login .message,
+  body.login #login_error {
+    order: 2;
+    width: 100%;
     background-color: #454545;
-    color: #fff;
+    color: #fff; }
+  body.login .message {
     border-color: #54CDCD; }
+    body.login .message + #login_error,
+    body.login .message + .message {
+      margin-top: 3px; }
   body.login #nav,
   body.login #backtoblog {
     display: flex;
     justify-content: space-between;
+    margin-top: 24px;
+    margin-bottom: 0;
     padding: 0;
     color: transparent; }
     body.login #nav *,
     body.login #backtoblog * {
       color: #acacac; }
-    body.login #nav a:hover,
-    body.login #backtoblog a:hover {
-      color: #54CDCD; }
-  body.login #login_error {
-    background-color: #454545; }
+    body.login #nav a,
+    body.login #backtoblog a {
+      margin-right: 10px; }
+      body.login #nav a:hover,
+      body.login #backtoblog a:hover {
+        color: #54CDCD; }
+  body.login #nav {
+    order: 5; }
+    body.login #nav a {
+      margin-right: 7px; }
+      body.login #nav a:last-child {
+        margin: 0; }
+  body.login #backtoblog {
+    order: 4; }
 
-#login h1 a {
-  display: block;
-  width: 83px;
-  height: 100px;
-  background-image: url("../images/10up-logo-full.svg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 20px;
-  line-height: 1.3em;
-  margin: 0 auto 25px;
-  padding: 0;
-  text-indent: -9999px;
-  outline: 0; }
-
-#login form p {
-  margin-bottom: 10px; }
+#login {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  #login h1 {
+    flex: 0 1 100%;
+    order: 1; }
+    #login h1 a {
+      display: block;
+      width: 83px;
+      height: 100px;
+      background-image: url("../images/10up-logo-full.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      color: #fff;
+      font-size: 20px;
+      line-height: 1.3em;
+      margin: 0 auto 25px;
+      padding: 0;
+      text-indent: -9999px;
+      outline: 0; }
+  #login form {
+    flex: 0 1 100%;
+    order: 3;
+    padding-bottom: 30px;
+    border-bottom: solid 1px #454545; }
+    #login form p {
+      margin-bottom: 10px; }
 
 #loginform,
 #lostpasswordform,
