@@ -22,9 +22,7 @@ define( 'FSTOPCLP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
  * Declare add_action, add_filter functions
  */
 add_action( 'login_enqueue_scripts', 'FStop_clp_load_assets' );
-add_action( 'login_form', 'FStop_clp_alter_form_html' );
-add_action( 'register_form', 'FStop_clp_alter_form_html' );
-add_action( 'lostpassword_form', 'FStop_clp_alter_form_html' );
+add_action( 'login_footer', 'FStop_clp_alter_form_html' );
 
 add_filter( 'login_headerurl', 'FStop_clp_login_logo_url' );
 add_filter( 'login_headertitle', 'FStop_clp_login_logo_url_title' );
