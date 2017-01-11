@@ -36,15 +36,10 @@ body.login {
 		margin-top: 24px;
 		margin-bottom: 0;
 		padding: 0;
-		// hack to make the `|` character invisible
-		color: rgba(0,0,0,0);
-		// then we make sure that all child elements have color, so we don't run into trouble
-		* {
-			color: $lighter_gray;
-		}
 
 		a {
 			margin-right: 10px;
+			color: $lighter_gray;
 
 			&:hover {
 				color: $tenup_bluegreen;
@@ -56,8 +51,6 @@ body.login {
 		order: 5;
 
 		a {
-			margin-right: 7px;
-
 			&:last-child {
 				margin: 0;
 			}

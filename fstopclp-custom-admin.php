@@ -57,6 +57,7 @@ function FStop_clp_alter_form_html() {
 
 	// Wrap label text in <span> tags for better styling.
 	$page_content = preg_replace( '/(<label.*?>\s*?)(.*?)(\s*?<br ?\/?>)/', '$1<span class="label-text">$2</span>', $page_content );
+	$page_content = preg_replace( '/(\/a ?>)(\s*\|\s*)(<a)/', '$1$3', $page_content );
 
 	ob_end_clean();
 	echo $page_content;
