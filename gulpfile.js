@@ -20,7 +20,7 @@ gulp.task('sass-lint'), function() {
 
 gulp.task('sass', function () {
 	var processors = [
-		autoprefixer({browsers: ['>30%']})
+		autoprefixer({browsers: ['>2%']})
 	]
 	return gulp.src('./assets/css/scss/**/*.scss')
 		.pipe(gulpif(!argv.production, sourcemaps.init() ) )
